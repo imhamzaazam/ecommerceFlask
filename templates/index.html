@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped" style="width:100%">
+      <tr>
+        <th>Your Cash</th>
+        <th>Cart</th>
+        <th>Quantity</th>
+        <th>Money Spent: </th>
+      </tr>
+      <td>{{ name[0]["cash"] }}</td>
+      {% for item in items %}
+
+      <td>
+      <img src="{{url_for('static', filename= (item.product_id|string)  +'.jpg' )}}">
+
+      </td>
+
+      <td>X {{item.quantity}}</td>
+
+      {% else %}
+      <td>None</td>
+      <td>Empty</td>
+      {% endfor %}
+      <td>{{count}}</td>
+    </table>
+{% endblock %}

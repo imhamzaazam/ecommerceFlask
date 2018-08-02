@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Category
+{% endblock %}
+
+{% block main %}
+{% for cat in categ %}
+<li>{{cat.category_name}}</li>
+{% endfor %}
+{% endblock %}

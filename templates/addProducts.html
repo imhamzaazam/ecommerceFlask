@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+ <form id="upload-form" action="{{ url_for('addProducts') }}" method="post" enctype="multipart/form-data">
+        <fieldset>
+    <div class="form-group">
+      <input autocomplete="off" autofocus class="form-control" name="product" placeholder="Product Name" type="text"/>
+    </div>
+    <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="price" placeholder="Enter Price" type="float"/>
+    </div>
+     <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="stock" placeholder="Enter Stock" type="int"/>
+    </div>
+     <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="cid" placeholder="Enter category id" type="int"/>
+    </div>
+     <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="category" placeholder="Enter category name " type="text"/>
+    </div>
+     <div class="form-group">
+    <input type="file" name="file" accept="image/*" multiple>
+    <div>
+    <div class="form-group">
+    <input type="submit" value="send">
+     </div>
+  </fieldset>
+  </form>
+
+{% endblock %}

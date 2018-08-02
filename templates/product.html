@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Products
+{% endblock %}
+
+{% block main %}
+{% for product in abc %}
+
+</body>
+
+    <div class="columns">
+  <ul class="price">
+    <li class="header"><img src="{{url_for('static', filename= (product.product_id|string)  +'.jpg' )}}"></li>
+    <li class="grey">Product Name: {{product.product_name}}</li>
+    <li>Product Stock: {{product.product_stock}} Units</li>
+    <li>Product Price: {{product.product_price}}</li>
+    <li class="grey"><a href="?arg1={{product.product_id}}" class="button">Buy</a></li>
+  </ul>
+</div>
+{% endfor %}
+
+
+{% endblock %}
+
